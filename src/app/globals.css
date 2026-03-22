@@ -1,38 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #003087;
+  --color-primary: #002D62;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #0057b8;
-  --color-accent: #e63946;
-  --color-gold: #f4a261;
-  --color-success: #2a9d8f;
-  --color-warning: #e9c46a;
+  --color-secondary: #CE1126;
+  --color-accent: #CE1126;
+  --color-gold: #F5AF02;
+  --color-success: #198038;
+  --color-warning: #F5AF02;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 96%;
+    --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 20 14.3% 4.1%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 216 100% 19%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 353 82% 43%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 353 82% 43%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 216 100% 19%;
+    --radius: 0.375rem;
   }
 
   * {
@@ -40,8 +40,8 @@
   }
 
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    background-color: #F5F5F5;
+    color: #191919;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -52,27 +52,36 @@
   }
 
   .gradient-primary {
-    background: linear-gradient(135deg, #003087 0%, #0057b8 100%);
+    background: linear-gradient(135deg, #002D62 0%, #003F8A 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, #003087 0%, #1a73e8 50%, #0057b8 100%);
+    background: linear-gradient(135deg, #002D62 0%, #003F8A 55%, #CE1126 100%);
+  }
+
+  .gradient-red {
+    background: linear-gradient(135deg, #CE1126 0%, #A50E1F 100%);
   }
 
   .card-hover {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   }
 
   .card-hover:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 48, 135, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 45, 98, 0.15);
+    border-color: #002D62 !important;
   }
 
   .auction-badge {
-    background: linear-gradient(135deg, #e63946, #c1121f);
+    background: linear-gradient(135deg, #CE1126, #A50E1F);
   }
 
   .buy-now-badge {
-    background: linear-gradient(135deg, #2a9d8f, #207567);
+    background: linear-gradient(135deg, #002D62, #003F8A);
+  }
+
+  .deal-banner {
+    background: linear-gradient(90deg, #002D62 0%, #CE1126 100%);
   }
 }

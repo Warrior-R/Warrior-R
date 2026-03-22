@@ -29,26 +29,25 @@ export function ProductCard({ product, viewMode = "grid" }: ProductCardProps) {
             )}
           </div>
           <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  {isAuction ? (
-                    <Badge variant="auction" className="gap-1"><Gavel className="w-3 h-3" /> Subasta</Badge>
-                  ) : (
-                    <Badge variant="success" className="gap-1"><Zap className="w-3 h-3" /> Compra ya</Badge>
-                  )}
-                  <Badge variant="secondary">{product.condition}</Badge>
-                </div>
-                <h3 className="font-semibold text-gray-900 text-sm line-clamp-2">{product.title}</h3>
-                <p className="text-xs text-gray-500 mt-1 line-clamp-2">{product.description}</p>
-              </div>
+            <div className="flex items-start justify-between gap-2 mb-2">
+              {isAuction ? (
+                <span className="auction-badge text-white text-xs px-2 py-0.5 rounded-full font-semibold flex items-center gap-1">
+                  <Gavel className="w-3 h-3" /> Subasta
+                </span>
+              ) : (
+                <span className="buy-now-badge text-white text-xs px-2 py-0.5 rounded-full font-semibold flex items-center gap-1">
+                  <Zap className="w-3 h-3" /> Compra ya
+                </span>
+              )}
             </div>
+            <h3 className="font-semibold text-gray-900 text-sm line-clamp-2">{product.title}</h3>
+            <p className="text-xs text-gray-500 mt-1 line-clamp-2">{product.description}</p>
             <div className="flex items-center justify-between mt-3">
               <div>
                 {isAuction && auction ? (
                   <div>
                     <p className="text-xs text-gray-500">Puja actual</p>
-                    <p className="font-bold text-red-600 text-xl">{formatCurrency(Number(auction.currentPrice))}</p>
+                    <p className="font-bold text-xl" style={{ color: "#CE1126" }}>{formatCurrency(Number(auction.currentPrice))}</p>
                     {auction.endTime && (
                       <div className="flex items-center gap-1 text-xs text-orange-600 mt-0.5">
                         <Clock className="w-3 h-3" />
@@ -57,7 +56,7 @@ export function ProductCard({ product, viewMode = "grid" }: ProductCardProps) {
                     )}
                   </div>
                 ) : (
-                  <p className="font-bold text-blue-800 text-xl">{formatCurrency(Number(product.price))}</p>
+                  <p className="font-bold text-xl" style={{ color: "#002D62" }}>{formatCurrency(Number(product.price))}</p>
                 )}
               </div>
               <div className="text-right">
@@ -96,28 +95,25 @@ export function ProductCard({ product, viewMode = "grid" }: ProductCardProps) {
             <div className="w-full h-full flex items-center justify-center text-4xl">📦</div>
           )}
 
-          {/* Badges */}
-          <div className="absolute top-2 left-2 flex gap-1">
+          <div className="absolute top-2 left-2">
             {isAuction ? (
               <span className="auction-badge text-white text-xs px-2 py-1 rounded-full font-semibold flex items-center gap-1">
                 <Gavel className="w-3 h-3" /> SUBASTA
               </span>
             ) : (
               <span className="buy-now-badge text-white text-xs px-2 py-1 rounded-full font-semibold flex items-center gap-1">
-                <Zap className="w-3 h-3" /> VENTA
+                <Zap className="w-3 h-3" /> COMPRA YA
               </span>
             )}
           </div>
 
-          {/* Wishlist button */}
           <button
             className="absolute top-2 right-2 w-7 h-7 bg-white/90 rounded-full flex items-center justify-center shadow hover:bg-white transition-colors opacity-0 group-hover:opacity-100"
-            onClick={(e) => { e.preventDefault(); /* Add to watchlist */ }}
+            onClick={(e) => { e.preventDefault(); }}
           >
             <Heart className="w-3.5 h-3.5 text-gray-500" />
           </button>
 
-          {/* Auction timer */}
           {isAuction && auction?.endTime && (
             <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
               <Clock className="w-3 h-3" />
@@ -129,29 +125,27 @@ export function ProductCard({ product, viewMode = "grid" }: ProductCardProps) {
         {/* Content */}
         <div className="p-3">
           <p className="text-xs text-gray-400 mb-1">{(product as any).category?.name}</p>
-          <h3 className="font-semibold text-gray-900 text-sm line-clamp-2 mb-2 group-hover:text-blue-700 transition-colors">
+          <h3 className="font-semibold text-gray-900 text-sm line-clamp-2 mb-2 group-hover:text-[#002D62] transition-colors">
             {product.title}
           </h3>
 
-          {/* Price */}
           {isAuction && auction ? (
             <div>
               <p className="text-xs text-gray-500">Puja actual</p>
               <div className="flex items-center justify-between">
-                <p className="font-bold text-red-600 text-base">{formatCurrency(Number(auction.currentPrice))}</p>
+                <p className="font-bold text-base" style={{ color: "#CE1126" }}>{formatCurrency(Number(auction.currentPrice))}</p>
                 <span className="text-xs text-gray-500">{auction._count?.bids || 0} pujas</span>
               </div>
               {auction.buyNowPrice && (
-                <p className="text-xs text-green-600 mt-0.5">
+                <p className="text-xs mt-0.5" style={{ color: "#002D62" }}>
                   Cómpralo ya: {formatCurrency(Number(auction.buyNowPrice))}
                 </p>
               )}
             </div>
           ) : (
-            <p className="font-bold text-blue-800 text-base">{formatCurrency(Number(product.price))}</p>
+            <p className="font-bold text-base" style={{ color: "#002D62" }}>{formatCurrency(Number(product.price))}</p>
           )}
 
-          {/* Seller info */}
           <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100">
             <div className="flex items-center gap-1 text-xs text-gray-500">
               {seller?.rating > 0 && (
