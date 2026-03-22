@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "@/components/ui/toaster";
 import { useAuthStore } from "@/store/authStore";
-import { DOMINICAN_PROVINCES, PRODUCT_CONDITIONS } from "@/lib/auth";
+import { DOMINICAN_PROVINCES, PRODUCT_CONDITIONS } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 

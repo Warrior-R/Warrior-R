@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuthStore } from "@/store/authStore";
 import { toast } from "@/components/ui/toaster";
-import { DOMINICAN_PROVINCES } from "@/lib/auth";
+import { DOMINICAN_PROVINCES } from "@/lib/constants";
 
 export default function RegisterPage() {
   const [step, setStep] = useState(1);

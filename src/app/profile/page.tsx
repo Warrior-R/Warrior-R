@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useAuthStore } from "@/store/authStore";
 import { toast } from "@/components/ui/toaster";
-import { DOMINICAN_PROVINCES } from "@/lib/auth";
+import { DOMINICAN_PROVINCES } from "@/lib/constants";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 

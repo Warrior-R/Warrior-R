@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ProductCard } from "./ProductCard";
-import { DOMINICAN_PROVINCES, PRODUCT_CONDITIONS } from "@/lib/auth";
+import { DOMINICAN_PROVINCES, PRODUCT_CONDITIONS } from "@/lib/constants";
 import type { Product } from "@/types";
 
 const SORT_OPTIONS = [
