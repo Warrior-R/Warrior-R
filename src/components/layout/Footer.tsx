@@ -1,89 +1,108 @@
 import Link from "next/link";
-import { Shield, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram, Twitter, Globe } from "lucide-react";
+
+const footerLinks = {
+  "Comprar": [
+    { label: "Registro", href: "/auth/register" },
+    { label: "Ayuda para comprar", href: "/marketplace" },
+    { label: "Tiendas", href: "/marketplace" },
+    { label: "Colecciones", href: "/marketplace" },
+    { label: "WarriorMarket para Caridad", href: "/marketplace" },
+    { label: "Tarjetas de Regalo", href: "/marketplace" },
+  ],
+  "Vender": [
+    { label: "Empezar a vender", href: "/seller/new" },
+    { label: "Cómo vender", href: "/seller/new" },
+    { label: "Vendedores empresariales", href: "/seller/new" },
+    { label: "Panel del vendedor", href: "/seller/dashboard" },
+    { label: "Verificar identidad", href: "/auth/verify" },
+  ],
+  "Sobre WarriorMarket": [
+    { label: "Información de la empresa", href: "/" },
+    { label: "Noticias", href: "/" },
+    { label: "Inversores", href: "/" },
+    { label: "Carreras", href: "/" },
+    { label: "Diversidad e Inclusión", href: "/" },
+    { label: "Políticas", href: "/" },
+  ],
+  "Ayuda y Contacto": [
+    { label: "Centro del Vendedor", href: "/seller/dashboard" },
+    { label: "Contáctanos", href: "/" },
+    { label: "Devoluciones", href: "/buyer/orders" },
+    { label: "Garantía WarriorMarket", href: "/" },
+    { label: "Centro de Seguridad", href: "/auth/verify" },
+  ],
+  "Comunidad": [
+    { label: "Anuncios", href: "/" },
+    { label: "Comunidad WarriorMarket", href: "/" },
+    { label: "Blog para Negocios", href: "/" },
+    { label: "Afiliados", href: "/" },
+  ],
+};
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: "#191919" }} className="text-gray-400">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-1 mb-4">
-              <span className="text-2xl font-black" style={{ color: "#4A90D9" }}>Warrior</span>
-              <span className="text-2xl font-black" style={{ color: "#CE1126" }}>Market</span>
+    <footer style={{ backgroundColor: "#F5F5F5", borderTop: "1px solid #e0e0e0" }}>
+      {/* Main footer links */}
+      <div className="max-w-[1280px] mx-auto px-4 py-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+          {Object.entries(footerLinks).map(([section, links]) => (
+            <div key={section}>
+              <h4 className="font-bold text-gray-900 text-sm mb-3">{section}</h4>
+              <ul className="space-y-2">
+                {links.map(link => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-xs text-gray-600 hover:text-[#002D62] hover:underline">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="text-sm leading-relaxed mb-4">
-              El marketplace más seguro de la República Dominicana. Compra y vende con verificación biométrica e inteligencia artificial.
-            </p>
-            <div className="flex items-center gap-1.5 text-xs" style={{ color: "#4ade80" }}>
-              <Shield className="w-3.5 h-3.5" />
-              <span>Verificación biométrica certificada</span>
+          ))}
+        </div>
+
+        {/* Stay connected */}
+        <div className="mt-8 pt-6 border-t border-gray-300">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+              <p className="text-sm font-bold text-gray-900 mb-2">Mantenerse conectado</p>
+              <div className="flex items-center gap-3">
+                <a href="#" className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#002D62] hover:underline">
+                  <Facebook className="w-4 h-4" /> Facebook
+                </a>
+                <a href="#" className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#002D62] hover:underline">
+                  <Instagram className="w-4 h-4" /> Instagram
+                </a>
+                <a href="#" className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#002D62] hover:underline">
+                  <Twitter className="w-4 h-4" /> X (Twitter)
+                </a>
+              </div>
             </div>
-          </div>
-
-          {/* Comprar */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Comprar</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/marketplace" className="hover:text-white transition-colors">Todos los productos</Link></li>
-              <li><Link href="/marketplace?listingType=AUCTION" className="hover:text-white transition-colors">Subastas activas</Link></li>
-              <li><Link href="/marketplace?listingType=FIXED_PRICE" className="hover:text-white transition-colors">Compra inmediata</Link></li>
-              <li><Link href="/buyer/orders" className="hover:text-white transition-colors">Mis compras</Link></li>
-            </ul>
-          </div>
-
-          {/* Vender */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Vender</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/seller/new" className="hover:text-white transition-colors">Publicar producto</Link></li>
-              <li><Link href="/seller/dashboard" className="hover:text-white transition-colors">Panel vendedor</Link></li>
-              <li><Link href="/auth/verify" className="hover:text-white transition-colors">Verificar cuenta</Link></li>
-            </ul>
-          </div>
-
-          {/* Contacto */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Contacto</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 shrink-0" style={{ color: "#4A90D9" }} />
-                <span>Santo Domingo, República Dominicana</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 shrink-0" style={{ color: "#4A90D9" }} />
-                <span>+1 (809) 000-0000</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 shrink-0" style={{ color: "#4A90D9" }} />
-                <span>soporte@warriormarket.do</span>
-              </li>
-            </ul>
-            <div className="flex gap-3 mt-4">
-              <a href="#" className="p-2 rounded-lg hover:bg-white/10 transition-colors" style={{ backgroundColor: "#2a2a2a" }}>
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a href="#" className="p-2 rounded-lg hover:bg-white/10 transition-colors" style={{ backgroundColor: "#2a2a2a" }}>
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="p-2 rounded-lg hover:bg-white/10 transition-colors" style={{ backgroundColor: "#2a2a2a" }}>
-                <Twitter className="w-4 h-4" />
-              </a>
+            <div className="flex items-center gap-2">
+              <button className="flex items-center gap-2 text-xs text-gray-600 border border-gray-400 px-3 py-2 rounded-lg hover:border-gray-600 transition-colors">
+                <span>🇩🇴</span>
+                República Dominicana
+              </button>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom bar with DR flag colors */}
-        <div className="border-t border-gray-800 mt-8 pt-6">
-          <div className="h-0.5 w-24 mb-4 rounded-full" style={{ background: "linear-gradient(90deg, #002D62 50%, #CE1126 50%)" }} />
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-            <p>&copy; 2024 WarriorMarket. Todos los derechos reservados.</p>
-            <div className="flex gap-4">
-              <Link href="/terminos" className="hover:text-white transition-colors">Términos</Link>
-              <Link href="/privacidad" className="hover:text-white transition-colors">Privacidad</Link>
-              <Link href="/ayuda" className="hover:text-white transition-colors">Ayuda</Link>
-            </div>
-          </div>
+      {/* Bottom legal bar */}
+      <div style={{ borderTop: "1px solid #e0e0e0", backgroundColor: "#EBEBEB" }}>
+        <div className="max-w-[1280px] mx-auto px-4 py-4">
+          <p className="text-xs text-gray-500 text-center">
+            Copyright © 1995-2024 WarriorMarket RD. Todos los Derechos Reservados.{" "}
+            <Link href="/" className="hover:underline hover:text-[#002D62]">Accesibilidad</Link>,{" "}
+            <Link href="/" className="hover:underline hover:text-[#002D62]">Acuerdo de Usuario</Link>,{" "}
+            <Link href="/" className="hover:underline hover:text-[#002D62]">Privacidad</Link>,{" "}
+            <Link href="/" className="hover:underline hover:text-[#002D62]">Pagos</Link>,{" "}
+            <Link href="/" className="hover:underline hover:text-[#002D62]">Cookies</Link>,{" "}
+            <Link href="/" className="hover:underline hover:text-[#002D62]">Aviso de Privacidad</Link>{" "}
+            y{" "}
+            <Link href="/" className="hover:underline hover:text-[#002D62]">AdChoice</Link>
+          </p>
         </div>
       </div>
     </footer>
