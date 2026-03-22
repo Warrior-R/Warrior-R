@@ -1,0 +1,239 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  BUYER
+  SELLER
+  ADMIN
+}
+
+enum VerificationStatus {
+  PENDING
+  DOCUMENT_VERIFIED
+  BIOMETRIC_VERIFIED
+  FULLY_VERIFIED
+  REJECTED
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  SOLD
+  EXPIRED
+  SUSPENDED
+}
+
+enum ListingType {
+  FIXED_PRICE
+  AUCTION
+  BOTH
+}
+
+enum AuctionStatus {
+  UPCOMING
+  ACTIVE
+  ENDED
+  CANCELLED
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  CARD
+  BANK_TRANSFER
+  CASH_ON_DELIVERY
+  PAGOMOVIL
+}
+
+model User {
+  id                  String             @id @default(cuid())
+  email               String             @unique
+  phone               String?            @unique
+  passwordHash        String
+  firstName           String
+  lastName            String
+  cedula              String?            @unique // Dominican ID
+  cedulaFront         String?            // URL to document front image
+  cedulaBack          String?            // URL to document back image
+  facePhoto           String?            // URL to face photo
+  fingerprintHash     String?            // Hashed fingerprint data
+  verificationStatus  VerificationStatus @default(PENDING)
+  role                UserRole           @default(BUYER)
+  isActive            Boolean            @default(true)
+  address             String?
+  city                String?
+  province            String?
+  country             String             @default("República Dominicana")
+  avatarUrl           String?
+  rating              Float              @default(0)
+  totalRatings        Int                @default(0)
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+
+  products            Product[]
+  bids                Bid[]
+  buyerOrders         Order[]            @relation("BuyerOrders")
+  sellerOrders        Order[]            @relation("SellerOrders")
+  reviews             Review[]           @relation("ReviewAuthor")
+  receivedReviews     Review[]           @relation("ReviewTarget")
+  watchlist           WatchlistItem[]
+  notifications       Notification[]
+  sessions            Session[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  iconUrl     String?
+  parentId    String?
+  parent      Category? @relation("SubCategories", fields: [parentId], references: [id])
+  children    Category[] @relation("SubCategories")
+  products    Product[]
+  createdAt   DateTime  @default(now())
+}
+
+model Product {
+  id              String        @id @default(cuid())
+  title           String
+  description     String
+  price           Decimal       @db.Decimal(10, 2)
+  currency        String        @default("DOP")
+  condition       String        // NEW, LIKE_NEW, GOOD, FAIR, POOR
+  status          ProductStatus @default(ACTIVE)
+  listingType     ListingType   @default(FIXED_PRICE)
+  images          String[]
+  aiCategory      String?       // AI-detected category
+  aiTags          String[]      // AI-detected tags
+  aiDescription   String?       // AI-enhanced description
+  views           Int           @default(0)
+  stock           Int           @default(1)
+  location        String?
+  province        String?
+  sellerId        String
+  categoryId      String
+  seller          User          @relation(fields: [sellerId], references: [id])
+  category        Category      @relation(fields: [categoryId], references: [id])
+  auction         Auction?
+  orderItems      OrderItem[]
+  reviews         Review[]
+  watchlist       WatchlistItem[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  expiresAt       DateTime?
+}
+
+model Auction {
+  id            String        @id @default(cuid())
+  productId     String        @unique
+  startPrice    Decimal       @db.Decimal(10, 2)
+  currentPrice  Decimal       @db.Decimal(10, 2)
+  buyNowPrice   Decimal?      @db.Decimal(10, 2)
+  minBidStep    Decimal       @db.Decimal(10, 2) @default(50)
+  status        AuctionStatus @default(UPCOMING)
+  startTime     DateTime
+  endTime       DateTime
+  winnerId      String?
+  product       Product       @relation(fields: [productId], references: [id])
+  bids          Bid[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model Bid {
+  id        String   @id @default(cuid())
+  auctionId String
+  bidderId  String
+  amount    Decimal  @db.Decimal(10, 2)
+  isWinning Boolean  @default(false)
+  createdAt DateTime @default(now())
+  auction   Auction  @relation(fields: [auctionId], references: [id])
+  bidder    User     @relation(fields: [bidderId], references: [id])
+}
+
+model Order {
+  id            String        @id @default(cuid())
+  buyerId       String
+  sellerId      String
+  status        OrderStatus   @default(PENDING)
+  totalAmount   Decimal       @db.Decimal(10, 2)
+  currency      String        @default("DOP")
+  paymentMethod PaymentMethod @default(CASH_ON_DELIVERY)
+  paymentRef    String?
+  shippingAddr  String?
+  notes         String?
+  buyer         User          @relation("BuyerOrders", fields: [buyerId], references: [id])
+  seller        User          @relation("SellerOrders", fields: [sellerId], references: [id])
+  items         OrderItem[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  productId String
+  quantity  Int      @default(1)
+  price     Decimal  @db.Decimal(10, 2)
+  order     Order    @relation(fields: [orderId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  authorId   String
+  targetId   String
+  productId  String?
+  rating     Int
+  comment    String?
+  author     User     @relation("ReviewAuthor", fields: [authorId], references: [id])
+  target     User     @relation("ReviewTarget", fields: [targetId], references: [id])
+  product    Product? @relation(fields: [productId], references: [id])
+  createdAt  DateTime @default(now())
+}
+
+model WatchlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  user      User     @relation(fields: [userId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  message   String
+  type      String
+  isRead    Boolean  @default(false)
+  link      String?
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
