@@ -21,25 +21,32 @@ ha tenido que auditarlo.
 
 **2019 — actualidad**
 
-| Periodo | Área | Referencia |
+| Área | Periodo | Contexto |
 |---|---|---|
-| Desde agosto de 2025 | Especialista en Proyectos TIC | |
-| 2025 | Implementación de plataforma Moodle | ICAE Soluciones |
-| Desde 2024 | Auditoría TIC | |
-| 2024 – 2025 | Servidores Synology | Oresund Ingenieros y Arquitectos |
-| 2019 – 2024 | Consultoría TIC | más colaboraciones externas |
-| Por proyectos · 5 años | Videovigilancia (CCTV) | |
-| Por proyectos · 4 años | Compras y adquisiciones tecnológicas | |
-| 2 años | Desarrollo de software | |
+| **Especialista en Proyectos TIC** | Agosto 2025 — actualidad | Gestión de proyectos tecnológicos de principio a fin |
+| **Auditoría TIC** | 2024 — actualidad | Revisión de sistemas, controles y riesgos |
+| **Plataforma Moodle** | 2025 | [ICAE Soluciones](https://icaesoluciones.com) |
+| **Servidores Synology** | 2024 – 2025 | Oresund Ingenieros y Arquitectos, entre otros proyectos |
+| **Consultoría TIC** | 2019 – 2024 | En organización, más colaboraciones externas |
+| **Videovigilancia (CCTV)** | 5 años · por proyectos | Diseño e implementación de sistemas de cámaras |
+| **Compras y adquisiciones** | 4 años · por proyectos | Especificación técnica y evaluación de ofertas |
+| **Desarrollo de software** | 2 años | Productos propios y a medida |
 
 ---
 
 ### Especialista en Proyectos TIC
-*Desde agosto de 2025*
+*Agosto 2025 — actualidad*
 
 Gestión de proyectos tecnológicos de principio a fin: levantamiento de
 requerimientos, alcance y planificación, coordinación de los equipos y
 proveedores involucrados, seguimiento de la ejecución y cierre.
+
+### Auditoría TIC
+*2024 — actualidad*
+
+Revisión de sistemas de información, controles y procesos tecnológicos.
+Evaluación de riesgos, verificación de cumplimiento y elaboración de informes con
+hallazgos clasificados por severidad y recomendaciones accionables.
 
 ### Implementación de plataforma Moodle
 *2025 · [ICAE Soluciones](https://icaesoluciones.com)*
@@ -50,15 +57,8 @@ permisos y matriculación, instalación de plugins y temas, integración con los
 sistemas existentes, migración de contenido y acompañamiento a docentes y
 administradores para que la plataforma quede en uso real.
 
-### Auditoría TIC
-*Desde 2024*
-
-Revisión de sistemas de información, controles y procesos tecnológicos.
-Evaluación de riesgos, verificación de cumplimiento y elaboración de informes con
-hallazgos y recomendaciones accionables.
-
 ### Servidores Synology
-*Varios proyectos, con foco en 2024 – 2025 · Oresund Ingenieros y Arquitectos*
+*2024 – 2025 · Oresund Ingenieros y Arquitectos, entre otros proyectos*
 
 Puesta en marcha de servidores NAS: dimensionamiento y configuración del arreglo
 de discos, instalación y ajuste de DSM, carpetas compartidas con su esquema de
@@ -68,14 +68,14 @@ DSM también puede asumir la grabación del CCTV mediante Surveillance Station, 
 que permite resolver almacenamiento y videovigilancia sobre el mismo equipo.
 
 ### Consultoría TIC
-*2019 – 2024, más colaboraciones externas*
+*2019 – 2024, en organización y en colaboraciones externas*
 
 Asesoría técnica en decisiones de tecnología: diagnóstico de la situación actual,
 definición de la solución, elección de arquitectura y proveedores, y
 acompañamiento durante la implementación.
 
 ### Videovigilancia (CCTV)
-*Por proyectos · 5 años de experiencia*
+*5 años de experiencia · por proyectos*
 
 Implementación de sistemas de cámaras: levantamiento del sitio y definición de
 los puntos de cobertura, selección de cámaras según la escena y la iluminación,
@@ -84,30 +84,59 @@ retención requerida, configuración de la grabación y la detección de movimie
 control de accesos y visualización remota.
 
 ### Compras y adquisiciones de equipos tecnológicos
-*Por proyectos · 4 años de experiencia*
+*4 años de experiencia · por proyectos*
 
 Redacción de especificaciones técnicas, análisis de necesidades reales frente a
 lo solicitado, evaluación comparativa de ofertas y proveedores, y control de la
 recepción y conformidad de lo adquirido.
 
 ### Desarrollo de software
-*2 años*
+*2 años · productos propios y a medida*
 
 Diseño e implementación de sistemas completos: modelo de datos, lógica de
 servidor, seguridad, interfaz, pruebas automatizadas y despliegue continuo. Los
-proyectos de abajo son ejemplos concretos.
+proyectos de más abajo son ejemplos concretos.
+
+---
+
+## Cómo trabajo
+
+La disciplina de auditoría y consultoría también se aplica a lo que construyo. En
+[MercadoRD](https://github.com/Warrior-R/mercadord), que es público, esto está
+versionado y se puede revisar:
+
+**Auditar antes de rehacer** — antes de re-plataformar, el sistema pasó por una
+auditoría integral documentada en `docs/AUDIT.md`, con los hallazgos sometidos a
+verificación adversarial: de 92 hallazgos crudos, 89 se confirmaron y 3 se
+descartaron como falsos positivos. Quedaron clasificados por severidad y
+agrupados en ocho dominios —base de datos, seguridad, arquitectura, UX y
+accesibilidad, backend, navegación e indexación, features y rendimiento—. Ese
+diagnóstico, no una corazonada, es lo que justificó rehacer la plataforma en
+lugar de parchearla.
+
+**Registrar las decisiones** — `docs/adr/` guarda las decisiones de arquitectura
+como ADR: contexto, alternativas consideradas, decisión y estado. Quien llegue
+después entiende por qué el sistema es como es.
+
+**Requisitos con estado y fases** — `docs/PRODUCT_REQUIREMENTS.md` define actores
+y roles, y cada requisito lleva identificador, estado (existe, parcial o no
+existe) y fase de entrega, con métricas objetivo declaradas.
+
+**Verificar de forma continua** — pruebas unitarias sobre la lógica pura y
+end-to-end sobre los recorridos de usuario, ejecutadas en cada cambio por
+integración continua.
 
 ---
 
 ## Proyectos
 
-| Proyecto | Qué es | Stack | Repo |
-|---|---|---|---|
-| **MercadoRD** | Marketplace y subastas con KYC obligatorio | Next.js 16 · React 19 · TypeScript · Supabase | [Público](https://github.com/Warrior-R/mercadord) |
-| **Korai POS** | Punto de venta de escritorio *local-first* | Electron · React · Vite · SQLite | Privado |
-| **JARVIS Hands** | Control de macOS por gestos con la webcam | Python · MediaPipe · OpenCV | Privado |
-| **El Cafecito** | Podcast diario de noticias, 100 % automático | Python · GitHub Actions · TTS · Supabase | Privado |
-| **Warrior Marketplace** | Prototipo de marketplace con subastas en vivo | Next.js · Prisma · NextAuth · Socket.IO | [Público](https://github.com/Warrior-R/Warrior-R) |
+| Proyecto | Qué es | Stack | Periodo | Repo |
+|---|---|---|---|---|
+| **MercadoRD** | Marketplace y subastas con KYC obligatorio | Next.js 16 · React 19 · TypeScript · Supabase | 2026 — activo | [Público](https://github.com/Warrior-R/mercadord) |
+| **Korai POS** | Punto de venta de escritorio *local-first* | Electron · React · Vite · SQLite | 2026 | Privado |
+| **JARVIS Hands** | Control de macOS por gestos con la webcam | Python · MediaPipe · OpenCV | 2026 | Privado |
+| **El Cafecito** | Podcast diario de noticias, 100 % automático | Python · GitHub Actions · TTS · Supabase | 2026 | Privado |
+| **Warrior Marketplace** | Prototipo de marketplace con subastas en vivo | Next.js · Prisma · NextAuth · Socket.IO | 2026 | [Público](https://github.com/Warrior-R/Warrior-R) |
 
 ---
 
@@ -119,25 +148,40 @@ Plataforma de compra-venta y subastas para República Dominicana, donde comprar 
 vender exige haber verificado la identidad (requisito de la Ley 172-13).
 
 - **Aplicación** — Next.js 16 (App Router), React 19, TypeScript y Tailwind CSS 4.
-  Catálogo por categorías, búsqueda, fichas de producto y de vendedor, favoritos,
-  mensajería, subastas con puja, carrito con ITBIS del 18 %, panel de
-  administración (reportes y banners) y páginas legales.
-- **Datos y sesión** — Supabase: PostgreSQL con Row Level Security, autenticación
-  por correo y Google OAuth.
+  Catálogo por categorías, búsqueda con filtros, fichas de producto y perfiles de
+  vendedor, favoritos, mensajería, notificaciones, reseñas, reportes y
+  moderación, subastas con puja, carrito con ITBIS del 18 %, panel de
+  administración (reportes, banners y destacados) y páginas legales.
+- **Datos y sesión** — Supabase: PostgreSQL con Row Level Security en todas las
+  tablas, autenticación por correo y Google OAuth, y MFA por TOTP.
 - **KYC** — la aprobación de identidad es **íntegramente del lado del servidor**:
   una Edge Function en Deno abre la sesión con el proveedor (Didit) y recibe el
-  webhook firmado; un trigger en Postgres impide que una cuenta se marque a sí
-  misma como verificada. El cliente nunca puede otorgarse la verificación.
-- **Calidad** — CI en GitHub Actions con lint, chequeo de tipos, tests unitarios
-  (Vitest), build y end-to-end (Playwright). Despliegue continuo en Vercel.
+  webhook firmado por HMAC; un trigger en Postgres impide que una cuenta se
+  marque a sí misma como verificada. El cliente nunca puede otorgarse la
+  verificación.
+- **Dinero y concurrencia en el servidor** — las pujas y la compra inmediata se
+  resuelven con procedimientos almacenados atómicos (`place_bid`, `buy_now`), no
+  en el navegador, con actualización en vivo por Realtime. Las escrituras
+  sensibles pasan por RPC `SECURITY DEFINER`, y una tabla `webhook_events`
+  garantiza la idempotencia de los callbacks externos.
+- **Cinco Edge Functions** en Deno: KYC, verificación de teléfono, contacto con
+  el vendedor sin exponer sus datos, asistente conversacional y borrado de
+  cuenta.
+- **Accesibilidad** — enlace de salto al contenido, focus-trap en los diálogos y
+  estilos de `:focus-visible`.
+- **Calidad** — CI en GitHub Actions con lint, chequeo de tipos, pruebas
+  unitarias (Vitest), build y end-to-end (Playwright). Despliegue continuo en
+  Vercel, con cabeceras de seguridad (CSP, HSTS con `preload`, Permissions-Policy)
+  definidas en el repositorio.
 - **Historia** — nació como sitio estático en HTML y JavaScript sin bundler ni
-  framework, y fue re-plataformado a Next.js conservando el producto en marcha.
+  framework, y fue re-plataformado a Next.js tras la auditoría, conservando la
+  lógica de servidor que ya era correcta y el producto en marcha.
 
 ---
 
 ### Korai POS — punto de venta para negocios dominicanos
 
-Privado · aplicación de escritorio para Windows
+Privado · producto comercial bajo la marca TechGo · aplicación de escritorio para Windows
 
 Sistema de punto de venta pensado para colmados y tiendas pequeñas, que tiene que
 seguir vendiendo cuando se cae el internet.
@@ -152,8 +196,9 @@ seguir vendiendo cuando se cae el internet.
   OpenFoodFacts y el formulario llega pre-llenado con nombre, marca e imagen; solo
   falta poner precio y existencias. Caché local de los últimos 500 códigos, que
   además sirve de respaldo sin internet.
-- **Distribución** — instalador NSIS para Windows x64 y actualizaciones
-  automáticas vía `electron-updater` publicadas como releases de GitHub.
+- **Distribución** — instalador NSIS para Windows x64 con instalación
+  personalizable, y actualizaciones automáticas vía `electron-updater` publicadas
+  como releases de GitHub.
 
 Electron 32 · React 18 · Vite 5 · Zustand · React Router
 
@@ -175,13 +220,14 @@ arrastrar, hacer scroll, subir el volumen o el brillo, cambiar de app.
   reconocen por plantillas, invariantes a posición, escala y rotación) y **gestos
   de movimiento** (reconocedor tipo *$1* con auto-segmentación de la trayectoria).
   A cada uno se le asigna un atajo de teclado, abrir una app, escribir un texto o
-  una función del sistema. Quedan activos al instante.
+  una función del sistema. Quedan activos al instante, y se gestionan por línea
+  de comandos sin necesidad de cámara.
 - **Dos manos, roles separados** — una mano lleva el cursor y la otra hace los
   gestos, para que el puntero nunca se congele mientras gesticulas.
 - **Teclado flotante en el aire** — hasta 10 punteros simultáneos (un dedo, un
   puntero) sobre un overlay transparente que no roba el foco a la app activa.
-- Empaquetado como `.app` de doble clic y suite de tests que valida la lógica de
-  gestos sin necesidad de cámara.
+- Empaquetado como `.app` de doble clic y suite de pruebas que valida la lógica
+  de gestos sin necesidad de cámara.
 
 Python · MediaPipe · OpenCV · pynput
 
@@ -193,7 +239,7 @@ Privado · publica solo, de lunes a viernes
 
 Un robot que cada mañana investiga las noticias de República Dominicana, escribe
 el guion, lo narra con dos voces dominicanas, genera la portada y publica el
-episodio. Nadie toca nada.
+episodio. Nadie toca nada. Los episodios rondan los 20–25 minutos.
 
 ```
 Google News RSS  →  guion (Claude)  →  TTS 2 voces es-DO  →  portada generada
@@ -237,7 +283,7 @@ en tiempo real.
 
 **Frontend** — TypeScript · React · Next.js (App Router) · Tailwind CSS · Radix UI · Zustand
 
-**Backend y datos** — PostgreSQL · Supabase (RLS, Auth, Storage, Edge Functions en Deno) · Prisma · Socket.IO
+**Backend y datos** — PostgreSQL (RLS, RPC `SECURITY DEFINER`, triggers) · Supabase (Auth, Storage, Realtime, Edge Functions en Deno) · Prisma · Socket.IO
 
 **Escritorio** — Electron · Vite · SQLite
 
