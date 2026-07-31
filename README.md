@@ -3,10 +3,10 @@
 **Desarrollador Senior · Consultor y Auditor TIC — República Dominicana**
 
 Trabajo en los dos lados de la tecnología: el que la evalúa y el que la
-construye. Por un lado, auditoría y consultoría TIC, gestión de proyectos y
-adquisición de equipamiento tecnológico. Por otro, desarrollo de producto de
-extremo a extremo —del modelo de datos y las políticas de seguridad hasta la
-interfaz y el despliegue.
+construye. Por un lado, auditoría y consultoría TIC, gestión de proyectos,
+implementación de plataformas y adquisición de equipamiento tecnológico. Por
+otro, desarrollo de producto de extremo a extremo —del modelo de datos y las
+políticas de seguridad hasta la interfaz y el despliegue.
 
 Esa combinación es deliberada: quien especifica una compra o audita un sistema
 decide mejor si ha construido uno, y quien construye lo hace con otro criterio si
@@ -32,6 +32,13 @@ acompañamiento durante la implementación.
 Gestión de proyectos tecnológicos de principio a fin: levantamiento de
 requerimientos, alcance y planificación, coordinación de los equipos y
 proveedores involucrados, seguimiento de la ejecución y cierre.
+
+**Implementación de plataforma Moodle**
+Puesta en marcha de Moodle como plataforma de aprendizaje: despliegue y
+configuración del entorno, estructura de cursos y categorías, esquema de roles,
+permisos y matriculación, instalación de plugins y temas, integración con los
+sistemas existentes, migración de contenido y acompañamiento a docentes y
+administradores para que la plataforma quede en uso real.
 
 **Compras y adquisiciones de equipos tecnológicos**
 Redacción de especificaciones técnicas, análisis de necesidades reales frente a
@@ -188,6 +195,8 @@ en tiempo real.
 **Escritorio** — Electron · Vite · SQLite
 
 **Python** — MediaPipe · OpenCV · automatización y pipelines de contenido
+
+**Plataformas** — Moodle (LMS): implementación, configuración e integración
 
 **Infra** — Vercel · GitHub Actions (CI/CD y cron) · Playwright · Vitest
 
