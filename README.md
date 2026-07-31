@@ -1,13 +1,47 @@
 # Carlos Guerrero
 
-**Desarrollador de producto — República Dominicana**
+**Desarrollador Senior · Consultor y Auditor TIC — República Dominicana**
 
-Construyo software completo para el mercado dominicano: del modelo de datos y las
-políticas de seguridad hasta la interfaz y el despliegue. Marketplaces con
-verificación de identidad, punto de venta de escritorio, automatización de
-contenido e interfaces poco convencionales.
+Trabajo en los dos lados de la tecnología: el que la evalúa y el que la
+construye. Por un lado, auditoría y consultoría TIC, gestión de proyectos y
+adquisición de equipamiento tecnológico. Por otro, desarrollo de producto de
+extremo a extremo —del modelo de datos y las políticas de seguridad hasta la
+interfaz y el despliegue.
+
+Esa combinación es deliberada: quien especifica una compra o audita un sistema
+decide mejor si ha construido uno, y quien construye lo hace con otro criterio si
+ha tenido que auditarlo.
 
 📧 [carguerrero1998@gmail.com](mailto:carguerrero1998@gmail.com)
+
+---
+
+## Experiencia
+
+**Auditoría TIC**
+Revisión de sistemas de información, controles y procesos tecnológicos.
+Evaluación de riesgos, verificación de cumplimiento y elaboración de informes con
+hallazgos y recomendaciones accionables.
+
+**Consultoría TIC**
+Asesoría técnica en decisiones de tecnología: diagnóstico de la situación actual,
+definición de la solución, elección de arquitectura y proveedores, y
+acompañamiento durante la implementación.
+
+**Especialista en Proyectos TIC**
+Gestión de proyectos tecnológicos de principio a fin: levantamiento de
+requerimientos, alcance y planificación, coordinación de los equipos y
+proveedores involucrados, seguimiento de la ejecución y cierre.
+
+**Compras y adquisiciones de equipos tecnológicos**
+Redacción de especificaciones técnicas, análisis de necesidades reales frente a
+lo solicitado, evaluación comparativa de ofertas y proveedores, y control de la
+recepción y conformidad de lo adquirido.
+
+**Desarrollo de software senior**
+Diseño e implementación de sistemas completos: modelo de datos, lógica de
+servidor, seguridad, interfaz, pruebas automatizadas y despliegue continuo. Los
+proyectos de abajo son ejemplos concretos.
 
 ---
 
