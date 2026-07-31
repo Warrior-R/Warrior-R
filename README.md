@@ -19,6 +19,8 @@ ha tenido que auditarlo.
 
 ## Experiencia
 
+**2021 — actualidad**
+
 ### Evaluación y asesoría
 
 **Auditoría TIC**
