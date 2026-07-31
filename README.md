@@ -19,42 +19,47 @@ ha tenido que auditarlo.
 
 ## Experiencia
 
-**2021 — actualidad**
+**2019 — actualidad**
 
-### Evaluación y asesoría
+| Periodo | Área | Referencia |
+|---|---|---|
+| Desde agosto de 2025 | Especialista en Proyectos TIC | |
+| 2025 | Implementación de plataforma Moodle | ICAE Soluciones |
+| Desde 2024 | Auditoría TIC | |
+| 2024 – 2025 | Servidores Synology | Oresund Ingenieros y Arquitectos |
+| 2019 – 2024 | Consultoría TIC | más colaboraciones externas |
+| Por proyectos · 5 años | Videovigilancia (CCTV) | |
+| Por proyectos · 4 años | Compras y adquisiciones tecnológicas | |
+| 2 años | Desarrollo de software | |
 
-**Auditoría TIC**
-Revisión de sistemas de información, controles y procesos tecnológicos.
-Evaluación de riesgos, verificación de cumplimiento y elaboración de informes con
-hallazgos y recomendaciones accionables.
+---
 
-**Consultoría TIC**
-Asesoría técnica en decisiones de tecnología: diagnóstico de la situación actual,
-definición de la solución, elección de arquitectura y proveedores, y
-acompañamiento durante la implementación.
+### Especialista en Proyectos TIC
+*Desde agosto de 2025*
 
-### Implementación y gestión
-
-**Especialista en Proyectos TIC**
 Gestión de proyectos tecnológicos de principio a fin: levantamiento de
 requerimientos, alcance y planificación, coordinación de los equipos y
 proveedores involucrados, seguimiento de la ejecución y cierre.
 
-**Plataforma Moodle**
+### Implementación de plataforma Moodle
+*2025 · [ICAE Soluciones](https://icaesoluciones.com)*
+
 Puesta en marcha de Moodle como plataforma de aprendizaje: despliegue y
 configuración del entorno, estructura de cursos y categorías, esquema de roles,
 permisos y matriculación, instalación de plugins y temas, integración con los
 sistemas existentes, migración de contenido y acompañamiento a docentes y
 administradores para que la plataforma quede en uso real.
 
-**Videovigilancia (CCTV)**
-Implementación de sistemas de cámaras: levantamiento del sitio y definición de
-los puntos de cobertura, selección de cámaras según la escena y la iluminación,
-red y alimentación PoE, cableado, dimensionamiento del almacenamiento según la
-retención requerida, configuración de la grabación y la detección de movimiento,
-control de accesos y visualización remota.
+### Auditoría TIC
+*Desde 2024*
 
-**Servidores Synology**
+Revisión de sistemas de información, controles y procesos tecnológicos.
+Evaluación de riesgos, verificación de cumplimiento y elaboración de informes con
+hallazgos y recomendaciones accionables.
+
+### Servidores Synology
+*Varios proyectos, con foco en 2024 – 2025 · Oresund Ingenieros y Arquitectos*
+
 Puesta en marcha de servidores NAS: dimensionamiento y configuración del arreglo
 de discos, instalación y ajuste de DSM, carpetas compartidas con su esquema de
 permisos, cuentas de usuario e integración con el directorio existente, políticas
@@ -62,14 +67,32 @@ de respaldo y snapshots, acceso remoto seguro, y mantenimiento y actualizaciones
 DSM también puede asumir la grabación del CCTV mediante Surveillance Station, lo
 que permite resolver almacenamiento y videovigilancia sobre el mismo equipo.
 
-**Compras y adquisiciones de equipos tecnológicos**
+### Consultoría TIC
+*2019 – 2024, más colaboraciones externas*
+
+Asesoría técnica en decisiones de tecnología: diagnóstico de la situación actual,
+definición de la solución, elección de arquitectura y proveedores, y
+acompañamiento durante la implementación.
+
+### Videovigilancia (CCTV)
+*Por proyectos · 5 años de experiencia*
+
+Implementación de sistemas de cámaras: levantamiento del sitio y definición de
+los puntos de cobertura, selección de cámaras según la escena y la iluminación,
+red y alimentación PoE, cableado, dimensionamiento del almacenamiento según la
+retención requerida, configuración de la grabación y la detección de movimiento,
+control de accesos y visualización remota.
+
+### Compras y adquisiciones de equipos tecnológicos
+*Por proyectos · 4 años de experiencia*
+
 Redacción de especificaciones técnicas, análisis de necesidades reales frente a
 lo solicitado, evaluación comparativa de ofertas y proveedores, y control de la
 recepción y conformidad de lo adquirido.
 
-### Desarrollo
+### Desarrollo de software
+*2 años*
 
-**Desarrollo de software senior**
 Diseño e implementación de sistemas completos: modelo de datos, lógica de
 servidor, seguridad, interfaz, pruebas automatizadas y despliegue continuo. Los
 proyectos de abajo son ejemplos concretos.
