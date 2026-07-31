@@ -4,9 +4,10 @@
 
 Trabajo en los dos lados de la tecnología: el que la evalúa y el que la
 construye. Por un lado, auditoría y consultoría TIC, gestión de proyectos,
-implementación de plataformas y adquisición de equipamiento tecnológico. Por
-otro, desarrollo de producto de extremo a extremo —del modelo de datos y las
-políticas de seguridad hasta la interfaz y el despliegue.
+implementación de plataformas e infraestructura —Moodle, videovigilancia,
+servidores— y adquisición de equipamiento tecnológico. Por otro, desarrollo de
+producto de extremo a extremo, del modelo de datos y las políticas de seguridad
+hasta la interfaz y el despliegue.
 
 Esa combinación es deliberada: quien especifica una compra o audita un sistema
 decide mejor si ha construido uno, y quien construye lo hace con otro criterio si
@@ -18,6 +19,8 @@ ha tenido que auditarlo.
 
 ## Experiencia
 
+### Evaluación y asesoría
+
 **Auditoría TIC**
 Revisión de sistemas de información, controles y procesos tecnológicos.
 Evaluación de riesgos, verificación de cumplimiento y elaboración de informes con
@@ -28,22 +31,41 @@ Asesoría técnica en decisiones de tecnología: diagnóstico de la situación a
 definición de la solución, elección de arquitectura y proveedores, y
 acompañamiento durante la implementación.
 
+### Implementación y gestión
+
 **Especialista en Proyectos TIC**
 Gestión de proyectos tecnológicos de principio a fin: levantamiento de
 requerimientos, alcance y planificación, coordinación de los equipos y
 proveedores involucrados, seguimiento de la ejecución y cierre.
 
-**Implementación de plataforma Moodle**
+**Plataforma Moodle**
 Puesta en marcha de Moodle como plataforma de aprendizaje: despliegue y
 configuración del entorno, estructura de cursos y categorías, esquema de roles,
 permisos y matriculación, instalación de plugins y temas, integración con los
 sistemas existentes, migración de contenido y acompañamiento a docentes y
 administradores para que la plataforma quede en uso real.
 
+**Videovigilancia (CCTV)**
+Implementación de sistemas de cámaras: levantamiento del sitio y definición de
+los puntos de cobertura, selección de cámaras según la escena y la iluminación,
+red y alimentación PoE, cableado, dimensionamiento del almacenamiento según la
+retención requerida, configuración de la grabación y la detección de movimiento,
+control de accesos y visualización remota.
+
+**Servidores Synology**
+Puesta en marcha de servidores NAS: dimensionamiento y configuración del arreglo
+de discos, instalación y ajuste de DSM, carpetas compartidas con su esquema de
+permisos, cuentas de usuario e integración con el directorio existente, políticas
+de respaldo y snapshots, acceso remoto seguro, y mantenimiento y actualizaciones.
+DSM también puede asumir la grabación del CCTV mediante Surveillance Station, lo
+que permite resolver almacenamiento y videovigilancia sobre el mismo equipo.
+
 **Compras y adquisiciones de equipos tecnológicos**
 Redacción de especificaciones técnicas, análisis de necesidades reales frente a
 lo solicitado, evaluación comparativa de ofertas y proveedores, y control de la
 recepción y conformidad de lo adquirido.
+
+### Desarrollo
 
 **Desarrollo de software senior**
 Diseño e implementación de sistemas completos: modelo de datos, lógica de
@@ -196,9 +218,9 @@ en tiempo real.
 
 **Python** — MediaPipe · OpenCV · automatización y pipelines de contenido
 
-**Plataformas** — Moodle (LMS): implementación, configuración e integración
+**Plataformas e infraestructura** — Moodle (LMS) · Synology DSM (almacenamiento, respaldo, Surveillance Station) · videovigilancia IP (cámaras, NVR, PoE, retención)
 
-**Infra** — Vercel · GitHub Actions (CI/CD y cron) · Playwright · Vitest
+**Despliegue y CI/CD** — Vercel · GitHub Actions (CI/CD y cron) · Playwright · Vitest
 
 ---
 
